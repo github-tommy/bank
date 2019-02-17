@@ -7,14 +7,20 @@
 </head>
 <body>
     <h1>Norton Bank, N.A.</h1>
-    <h2>What do you plan to do today?</h2>
-    <button onclick="deposit()">Deposit</button>
-    <button onclick="withdrawal()">Withdrawal</button>
-    <button onclick="balanceInquiry()">Balance Inquiry</button>
-    <button onclick="quit()">Quit</button>
-
-
+    <h2>How can we help you today?</h2>
+    <h2>Please select the box you plan to do:</h2>
+    <div class=container>
+            <button onclick="withdrawal()">Click here for Withdrawal*</button>
+            <button onclick="deposit()">Click here for Deposit**</button>
+            <button onclick="view()">Click here for Balance Inquiry</button>
+        <button onclick="quit()">Click here to Quit</button>
+    </div>
     <script src="./bank.js" charset="utf-8"></script> 
 </body>
-
+<footer>
+    </br>
+    <p>* You may do a withdrawal up to your available balance after leaving a minimum of US$300 in your account.</p>
+    <p>** Please be advised a deposit is subject to $50,000 daily limit imposed by Federal Reserve Regulation FED101. We apologize for any inconvenience. You may deposit the remaining on the next business day. Or please visit our branch for any deposit > US$50,000. </p>
+</footer>
+<small>Copyright 2019 @tommybook-JN</small>
 </html>
