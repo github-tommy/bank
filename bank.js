@@ -9,13 +9,48 @@ function userResponse() {
     quit = 2;
     userResponse = prompt('enter 1 to continue or 2 to quit');
     if (userResponse == 2) {
-      console.log('goodbye');
-    } else var x = 1;
+      alert('goodbye');
+    } else 
+    var withdraw = 1;
+    var deposit = 2;
+    var view = 3;
+    var x = 1;
+    while(x<4) {
+        (prompt('enter 1 to withdraw, 2 to deposit, 3 to view balance'));
+        x++;
+        var bal = 1000;
+        var withdrawal = prompt('enter the amount you would like to withdraw');
+        var balEnding;
+        balEnding = bal - withdrawal;
 
-    while(x<5) {
-      console.log(prompt('enter 1 to withdraw, 2 to deposit or 3 to view balance'));
-      x++;
-    }     
+        if (bal >= withdrawal) {
+            alert('successful. your new balance is '+ balEnding);
+        } else alert('unsuccessful');
+
+        var deposit = prompt('enter amount you would like to deposit');
+        var balEnding;
+    
+        var balEnding = parseInt(balEnding) + parseInt(deposit);
+
+        alert('thank you. your new balance is '+ balEnding);
+        
+        view = alert('your balance is '+ balEnding);
+    }
+   
+    // function withdrawal() {
+//     let withdrawal = prompt ('enter the amount you would like to withdraw');
+//     let initBalance = 100000;
+//     let availBalance = initBalance - 300;
+//     let endingBalance;
+
+//     endingBalance = parseInt(initBalance) - parseInt(withdrawal);
+
+//     if (availBalance >= withdrawal) {
+//         alert('Your withdrawal is succesfull. Your new balance is '+ endingBalance)
+//     } else alert('Your withdrawal is unsuccessful due to possibly insufficient fund. Please try again for a smaller amount');
+// }
+
+    
     }
 
 
@@ -24,18 +59,6 @@ function userResponse() {
 
 
 
-
-
-//to display welcome greeting and user balance
-
-// function showMessage() {
-//     var initBalance = 100000 * 1;
-//     alert('Welcome to Norton Bank!');
-//     alert('You authorized us to show your balance next? [username and password]');
-//     alert('Your available balance is US$'+ initBalance);
-//     }
-
-//     showMessage();
     
 // prompt user to select an action from a given set of command displayed to user
 // 1 to withdraw / 2 to deposit/ 3 to view balance/ 4 to quit
