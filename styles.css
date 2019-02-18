@@ -1,32 +1,7 @@
-.container {
-    max-width: 1400px;
-    margin: auto;
-    background-color: #;
-}
-
-.gallery {
-padding: 20px;
-box-sizing: border-box;
-margin-bottom: 20px;
-flex-basis: 20%;
-text-align: center;
-}
-
-@media(min-width: 900px) {
-.container {
-  display: flex;
-  justify-content: space-around;
-}
-}
-
 h1 {
     background-color: #2996cc;
     color: whitesmoke;
     padding: 2rem;
-}
-
-h2{
-    text-align: center;
 }
 
 html {
