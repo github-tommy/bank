@@ -7,12 +7,12 @@ let bal = 1000;
 alert('Your available balance is US$'+ bal);
 
 while(quit === false) {
-    let input = prompt ("enter your command: 'w' for withdrawal, 'd' for deposit, 'v' for view' or 'q' for quit");
+    let input = prompt ("Enter your command: 'W' for withdrawal, 'D' for deposit, 'V' for view' or 'Q' for quit in Capital Letter");
   
-      if (input === 'q') {
+      if (input === 'Q') {
     quit = true;
 } 
-else if (input === 'w') {
+else if (input === 'W') {
     var withdrawal;
     var withdrawal = prompt('enter the amount you would like to withdraw');
     var balEnding;
@@ -21,7 +21,7 @@ else if (input === 'w') {
 
     alert('Your withdrawal is successfull. Your new balance is US$'+ balEnding);
 }
-else if(input === 'd') {
+else if(input === 'D') {
     var deposit;
     var deposit = prompt('enter the amount you would like to deposit');
     var balEnding;
@@ -30,7 +30,7 @@ else if(input === 'd') {
 
     alert('Your deposit has been accepted. Your new balance is US$ '+ balEnding)
 }
-else if(input ==='v') {
+else if(input ==='V') {
     var view;
     var balEnding;
 
