@@ -17,7 +17,7 @@ else if (input === 'W') {
     var withdrawal = prompt('enter the amount you would like to withdraw');
     var balEnding;
 
-    balEnding = bal - withdrawal;
+    balEnding = parseInt(bal) - parseInt(withdrawal);
 
     alert('Your withdrawal is successfull. Your new balance is US$'+ balEnding);
 }
@@ -26,14 +26,13 @@ else if(input === 'D') {
     var deposit = prompt('enter the amount you would like to deposit');
     var balEnding;
 
-    balEnding = parseInt(balEnding) + parseInt(deposit);
+    balEnding = parseInt(bal) + parseInt(deposit);
 
     alert('Your deposit has been accepted. Your new balance is US$ '+ balEnding)
 }
 else if(input ==='V') {
     var view;
-    var balEnding;
 
-    alert('Your balance is '+ balEnding);
+    alert('Your balance is '+ parseInt(bal));
 }
  }
