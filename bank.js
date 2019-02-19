@@ -1,39 +1,39 @@
 //banking assignment - to loop 4 functions of withdraw deposit view quit /WDVQ loop
 // ====================================================================================
-// declare a balance and boolean continue or quit? ==================================
+// declare a balance and while loop? ==================================
 
-var bal = 1000;
+let quit = false;
+let bal = 1000;
 alert('Your available balance is US$'+ bal);
 
-function userResponse() {
-    quit = 2;
-    userResponse = prompt('enter 1 to continue or 2 to quit');
-    if (userResponse == 2) {
-      alert('goodbye');
-    } else 
-    var withdraw = 1;
-    var deposit = 2;
-    var view = 3;
-    var x = 1;
-    while(x<4) {
-        (prompt('enter 1 to withdraw, 2 to deposit, 3 to view balance'));
-        x++;
-        var bal = 1000;
-        var withdrawal = prompt('enter the amount you would like to withdraw');
-        var balEnding;
-        balEnding = bal - withdrawal;
+while(quit === false) {
+    let input = prompt ("enter your command: 'w' for withdrawal, 'd' for deposit, 'v' for view' or 'q' for quit");
+  
+      if (input === 'q') {
+    quit = true;
+} 
+else if (input === 'w') {
+    var withdrawal;
+    var withdrawal = prompt('enter the amount you would like to withdraw');
+    var balEnding;
 
-        if (bal >= withdrawal) {
-            alert('successful. your new balance is '+ balEnding);
-        } else alert('unsuccessful');
+    balEnding = bal - withdrawal;
 
-        var deposit = prompt('enter amount you would like to deposit');
-        var balEnding;
-    
-        var balEnding = parseInt(balEnding) + parseInt(deposit);
-
-        alert('thank you. your new balance is '+ balEnding);
-        
-        view = alert('your balance is '+ balEnding);
-    }    
+    alert('Your withdrawal is successfull. Your new balance is US$'+ balEnding);
 }
+else if(input === 'd') {
+    var deposit;
+    var deposit = prompt('enter the amount you would like to deposit');
+    var balEnding;
+
+    balEnding = parseInt(balEnding) + parseInt(deposit);
+
+    alert('Your deposit has been accepted. Your new balance is US$ '+ balEnding)
+}
+else if(input ==='v') {
+    var view;
+    var balEnding;
+
+    alert('Your balance is '+ balEnding);
+}
+ }
