@@ -1,7 +1,7 @@
-h1 {
+header {
     background-color: #00abeb;
     color: whitesmoke;
-    padding: 2rem;
+    padding: 15px;
 }
 
 h3 {
@@ -16,4 +16,8 @@ button {
     padding: 30px;
     background-color: #0bb634;
     border-radius: 8%;
+}
+
+img {
+    width: 8%;
 }
