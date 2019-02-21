@@ -1,35 +1,39 @@
 //banking assignment - Do a while WDVQ loop
-// Alert user balance and available balance to wdraw - net of 300$ min required to keep ==================================
 
 let quit = false;
 let bal = 1000;
-let balAvailable = bal - 300;
 
-alert('Your available balance is US$'+ bal + '. You may withdraw up to US$'+ balAvailable);
+// Alert user balance and available balance to wdraw - net of 300$ min required to keep ==================================
+
+alert('Welcom to Norton Bank. Your balance is US$'+ bal + '.');
 
 //user can quit anytime if Q is selected.
 
 while(quit === false) {
-    let input = prompt ("Enter your command: 'W' for withdrawal, 'D' for deposit, 'V' for view' or 'Q' for quit in Capital Letter");
+    let input = prompt ("Enter your command: \n'W' for withdrawal, \n'D' for deposit, \n'V' for view' or \n'Q' for quit in Capital Letter");
 
       if (input === 'Q') {
     quit = true;
 } 
 
-// user can withdraw up balance - 300 min to keep in account
+// user can withdraw up balance - alert and confirm if bal <300
 
 else if (input === 'W') {
     var withdrawal;
     var withdrawal = prompt('enter the amount you would like to withdraw');
     var runningBal;
+    let proceed = true;
 
     if (parseInt(withdrawal) <= (parseInt(bal) -300)) {
 
     runningBal = bal - withdrawal;
     
-    alert('Your withdrawal is successful. Your new balance is' + runningBal);
+    alert('Your withdrawal is successful. Your new balance is ' + runningBal);
     
-    } else (alert('Insufficient fund. You may try again for a smaller amount. A minimum balance of US$300 is required by Norton Bank at all times.'));
+    } else prompt('please confirm to proceed. 1 for yes, 2 for no');
+    if (input === 1) {
+        proceed = true;
+    }
 }
 
 //user can deposit up t0 50k per transaction
@@ -41,7 +45,7 @@ else if(input === 'D') {
 
     if (parseInt(deposit) <= 50000) {
         
-        runningBal = parseInt(runningBal) + parseInt(deposit);
+        runningBal = parseInt(bal) + parseInt(deposit);
 
         alert('Your deposit is accepted. Your new balance is '+ runningBal);
     
@@ -53,10 +57,10 @@ else if(input === 'D') {
 else if(input ==='V') {
     var view;
 
-    if (runningBal<1001) {
+    if (bal<1001) {
         alert('Reminder to top up your balance.')
     }
 
-    alert('Your balance is '+ parseInt(runningBal));
-    }
+    alert('Your balance is '+ bal);
+}
 }
