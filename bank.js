@@ -21,13 +21,13 @@ while(quit === false) {
 else if (input === 'W') {
     var withdrawal;
     var withdrawal = prompt('enter the amount you would like to withdraw');
-    var balEnding;
+    var runningBal;
 
     if (parseInt(withdrawal) <= (parseInt(bal) -300)) {
 
-    balEnding = bal - withdrawal;
+    runningBal = bal - withdrawal;
     
-    alert('Your withdrawal is successful. Your new balance is' + balEnding);
+    alert('Your withdrawal is successful. Your new balance is' + runningBal);
     
     } else (alert('Insufficient fund. You may try again for a smaller amount. A minimum balance of US$300 is required by Norton Bank at all times.'));
 }
@@ -37,13 +37,13 @@ else if (input === 'W') {
 else if(input === 'D') {
     var deposit;
     var deposit = prompt('enter the amount you would like to deposit');
-    var balEnding;
+    var runningBal;
 
     if (parseInt(deposit) <= 50000) {
         
-        balEnding = parseInt(bal) + parseInt(deposit);
+        runningBal = parseInt(runningBal) + parseInt(deposit);
 
-        alert('Your deposit is accepted. Your new balance is '+ balEnding);
+        alert('Your deposit is accepted. Your new balance is '+ runningBal);
     
     } else alert('Your deposit is not accepted. Please try again for a smaller amount. A deposit is subject to a maximum of US$50k per transaction.');
 }
@@ -53,10 +53,10 @@ else if(input === 'D') {
 else if(input ==='V') {
     var view;
 
-    if (bal<1001) {
+    if (runningBal<1001) {
         alert('Reminder to top up your balance.')
     }
 
-    alert('Your balance is '+ parseInt(bal));
+    alert('Your balance is '+ parseInt(runningBal));
+    }
 }
- }
