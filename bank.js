@@ -5,7 +5,7 @@ let bal = 1000;
 
 // Alert user balance and available balance to wdraw - net of 300$ min required to keep ==================================
 
-alert('Welcom to Norton Bank. Your balance is US$'+ bal + '.');
+alert('Welcome to Norton Bank. Your balance is US$'+ bal + '.');
 
 //user can quit anytime if Q is selected.
 
@@ -31,9 +31,16 @@ else if (input === 'W') {
     alert('Your withdrawal is successful. Your new balance is ' + runningBal);
     
     } else prompt('please confirm to proceed. 1 for yes, 2 for no');
-    if (input === 1) {
-        proceed = true;
+    if (proceed === true) {
+        
+        if ((bal-withdrawal) >= 0) {
+
+            runningBal = bal - withdrawal;
+            
+        alert('Your withdrawal is successful. Your new balance is ' + runningBal);
     }
+}
+    else (alert('unsuccessful'))
 }
 
 //user can deposit up t0 50k per transaction
