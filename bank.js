@@ -1,73 +1,49 @@
-//banking assignment - Do a while WDVQ loop
+//run the bank app - Do a while WDVQ loop
+let input = '';
+let balance = 1000; 
 
-let quit = false;
-let bal = 1000;
-
-// Alert user balance and available balance to wdraw - net of 300$ min required to keep ==================================
-
-alert('Welcome to Norton Bank. Your balance is US$'+ bal + '.');
-
-//user can quit anytime if Q is selected.
-
-while(quit === false) {
-    let input = prompt ("Enter your command: \n'W' for withdrawal, \n'D' for deposit, \n'V' for view' or \n'Q' for quit in Capital Letter");
-
-      if (input === 'Q') {
-    quit = true;
-} 
-
-// user can withdraw up balance - alert and confirm if bal <300
-
-else if (input === 'W') {
-    var withdrawal;
-    var withdrawal = prompt('enter the amount you would like to withdraw');
-    var runningBal;
-    let proceed = true;
-
-    if (parseInt(withdrawal) <= (parseInt(bal) -300)) {
-
-    runningBal = bal - withdrawal;
+while (input !== 'Q') {
     
-    alert('Your withdrawal is successful. Your new balance is ' + runningBal);
-    
-    } else prompt('please confirm to proceed. 1 for yes, 2 for no');
-    if (proceed === true) {
-        
-        if ((bal-withdrawal) >= 0) {
+    input = prompt('Welcome to Norton Bank! \nEnter W for Withdrawal, D for Deposit, V for View and Q for Quit. Please use Capital letter.');
 
-            runningBal = bal - withdrawal;
-            
-        alert('Your withdrawal is successful. Your new balance is ' + runningBal);
-    }
-}
-    else (alert('unsuccessful'))
-}
-
-//user can deposit up t0 50k per transaction
-
-else if(input === 'D') {
-    var deposit;
-    var deposit = prompt('enter the amount you would like to deposit');
-    var runningBal;
-
-    if (parseInt(deposit) <= 50000) {
-        
-        runningBal = parseInt(bal) + parseInt(deposit);
-
-        alert('Your deposit is accepted. Your new balance is '+ runningBal);
-    
-    } else alert('Your deposit is not accepted. Please try again for a smaller amount. A deposit is subject to a maximum of US$50k per transaction.');
-}
-
-//to alert user low balance 1k - to top up
-
-else if(input ==='V') {
-    var view;
-
-    if (bal<1001) {
-        alert('Reminder to top up your balance.')
+    switch(input) {
+        case 'W':
+            console.log('You entered to Withdraw');
+            toWithdraw();
+            break;
+        case 'D':
+            console.log('You entered to Deposit');
+            toDeposit();
+            break;
+        case 'V':
+            console.log('You entered to View balance');
+            toView();
+            break;
+        case 'Q':
+            console.log('You entered to Quit');
+            break;
+        default:
+            console.log('Please try again your selection.');
+            break;
     }
 
-    alert('Your balance is '+ bal);
+function toWithdraw() {
+    let withdrawal = prompt('Enter your withdrawal amount');
+  if(withdrawal <= balance) {
+    balance -= Number(withdrawal);
+    alert(balance);
+ } else alert('insufficient balance');
+}
+
+function toDeposit() {
+    let deposit = prompt('Enter your deposit amount');
+  if(deposit <= 50000) {
+    balance += Number(deposit);
+    alert(balance);
+  } else alert('Unsuccessful. Subject to max 50k transaction limit.')
+}
+
+function toView() {
+    alert(balance);
 }
 }
